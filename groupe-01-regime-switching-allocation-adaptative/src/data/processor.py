@@ -212,9 +212,11 @@ class MarketDataProcessor:
         benchmark = self.cfg.tickers[0]
         log_returns = np.log(prices[benchmark]).diff().dropna()
 
-        ret_train = log_returns.loc[train_idx].dropna()
-        ret_val = log_returns.loc[val_idx].dropna()
-        ret_test = log_returns.loc[test_idx].dropna()
+        # Intersection des index : log_returns démarre 1 jour après prices
+        # (à cause du .diff()), il peut manquer certaines dates de train_idx
+        ret_train = log_returns.reindex(train_idx).dropna()
+        ret_val   = log_returns.reindex(val_idx).dropna()
+        ret_test  = log_returns.reindex(test_idx).dropna()
 
         bundle = DataBundle(
             features_scaled=features_scaled,
