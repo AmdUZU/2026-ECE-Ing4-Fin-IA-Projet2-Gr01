@@ -4,7 +4,6 @@ Ce projet implémente une stratégie **Wheel automatisée** sur options via Quan
 
 L’objectif est de générer un revenu régulier en vendant des options (puts et calls) sur des ETF liquides.
 
----
 
 ##  Actifs utilisés
 
@@ -12,7 +11,6 @@ L’objectif est de générer un revenu régulier en vendant des options (puts e
 - XLF (secteur financier)
 - XLK (secteur technologique)
 
----
 
 ##  Principe de la stratégie
 
@@ -23,7 +21,6 @@ La stratégie Wheel suit un cycle :
 3. Vente de call couvert  
 4. Répétition du cycle  
 
----
 
 ##  Fonctionnement
 
@@ -34,7 +31,6 @@ L’algorithme utilise une machine à états :
 - `LONG_STOCK` : vente de call  
 - `SHORT_CALL` : attente de l’expiration  
 
----
 
 ##  Sélection des options
 
@@ -47,7 +43,6 @@ Les deltas sont ajustés dynamiquement en fonction :
 - de la volatilité implicite (IV)
 - du skew (puts vs calls)
 
----
 
 ##  Gestion du capital
 
@@ -55,7 +50,6 @@ Les deltas sont ajustés dynamiquement en fonction :
 - Allocation répartie entre les actifs  
 - Taille des positions basée sur le capital disponible  
 
----
 
 ##  Suivi des performances
 
@@ -64,7 +58,6 @@ Un reporting mensuel permet de suivre :
 - les primes collectées  
 - la performance du portefeuille  
 
----
 
 ## Détails techniques
 
@@ -74,7 +67,6 @@ Un reporting mensuel permet de suivre :
   - Actions : minute  
   - Options : heure  
 
----
 
 ##  Installation
 
@@ -83,7 +75,6 @@ Un reporting mensuel permet de suivre :
 3. Copier le code dans le fichier `main.py`  
 4. Lancer le backtest
 
----
 
 ##  Utilisation
 
@@ -98,7 +89,7 @@ Les logs permettent de suivre :
 - les entrées en position  
 - les changements d’état  
 - les résultats mensuels  
----
+
 ##  Tests
 
 - Backtest sur la période 2024 – 2026  
@@ -111,4 +102,3 @@ Résultats observables :
 - nombre de trades  
 - primes collectées  
 - évolution du portefeuille  
----
