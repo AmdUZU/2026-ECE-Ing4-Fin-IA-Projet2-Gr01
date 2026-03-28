@@ -1,5 +1,3 @@
-##  Introduction
-
 Ce projet implémente une stratégie Wheel automatisée sur options via la plateforme QuantConnect.
 
 L’objectif est de générer un revenu régulier en combinant la vente de puts cash-secured et de calls couverts, tout en adaptant le niveau de risque en fonction de la volatilité du marché.
